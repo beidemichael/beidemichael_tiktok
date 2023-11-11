@@ -1,3 +1,4 @@
+import 'package:beidemichael_tiktok/models/video.dart';
 import 'package:beidemichael_tiktok/screens/1.apps.dart';
 import 'package:beidemichael_tiktok/screens/2.qucon.dart';
 import 'package:beidemichael_tiktok/screens/3.zaddy.dart';
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> pages = <Widget>[
+  static List<Widget> pages = <Widget>[
     AppsPage(),
     QuconPage(),
     ZaddyPage(),
