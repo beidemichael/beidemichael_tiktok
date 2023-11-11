@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/comment.dart';
 import 'commentWidget.dart';
+import 'customTextField.dart';
 
 void ShowCommentsBottomSheet(BuildContext context) {
   showModalBottomSheet(
@@ -16,7 +17,6 @@ void ShowCommentsBottomSheet(BuildContext context) {
         child: FractionallySizedBox(
           heightFactor: 0.6,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -28,7 +28,7 @@ void ShowCommentsBottomSheet(BuildContext context) {
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 30, bottom: 80),
+                  padding: const EdgeInsets.only(top: 30, bottom: 80,left: 20,right: 20),
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: Samplecomments.length,
@@ -56,9 +56,10 @@ void ShowCommentsBottomSheet(BuildContext context) {
                     children: [
                       Divider(
                         thickness: 1,
-                        color: Colors.grey,
+                        color: const Color.fromARGB(255, 223, 217, 217),
+                        height: 0,
                       ),
-                      //CommetTextField(context)
+                      CommentTextField()
                       // ChangeNotifierProvider(
                       //   create: (context) => ViewController(),
                       //   child: CommentWithEmoji(),
