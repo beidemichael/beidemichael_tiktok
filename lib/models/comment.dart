@@ -18,7 +18,7 @@ class Comment {
 List<Comment> Samplecomments = [
   Comment(
       commentText:
-          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper      amet justo quisque          ullamcorper volutpat. Donec feugiat diam et tellus in habitant viverra duis. ',
+          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper amet justo quisque ullamcorper volutpat. Donec feugiat diam et tellus in habitant viverra duis. ',
       time: '3 hours ago',
       username: '@Kerryjo',
       date: 'Kerry Johns',
@@ -26,7 +26,7 @@ List<Comment> Samplecomments = [
       reply: true),
   Comment(
       commentText:
-          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper      amet justo duis. ',
+          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper amet justo duis. ',
       time: '8 hour ago',
        username: '@Kerryjo',
       date: 'Kerry Johns',
@@ -34,7 +34,7 @@ List<Comment> Samplecomments = [
       reply: false),
   Comment(
       commentText:
-          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper      amet justo quisque          ullamcorper volutpat. Donec feugiat diam et tellus in habitant viverra duis. ',
+          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper amet justo quisque ullamcorper volutpat. Donec feugiat diam et tellus in habitant viverra duis. ',
       time: '3 hour ago',
        username: '@Kerryjo',
       date: 'Kerry Johns',
@@ -42,7 +42,7 @@ List<Comment> Samplecomments = [
       reply: true),
   Comment(
       commentText:
-          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper      amet justo duis. ',
+          'Lorem ipsum dolor sit amet consectetur. Aliquam sagittis ullamcorper amet justo duis. ',
       time: '8 hour ago',
        username: '@Kerryjo',
       date: 'Kerry Johns',

@@ -35,7 +35,7 @@ void ShowCommentsBottomSheet(BuildContext context) {
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: comment(
+                          child: commentName(
                               Samplecomments[index].commentText,
                               Samplecomments[index].date,
                               Samplecomments[index].username,
@@ -59,7 +59,7 @@ void ShowCommentsBottomSheet(BuildContext context) {
                         color: const Color.fromARGB(255, 223, 217, 217),
                         height: 0,
                       ),
-                      CommentTextField()
+                      CommentTextField(noBackground: false)
                       // ChangeNotifierProvider(
                       //   create: (context) => ViewController(),
                       //   child: CommentWithEmoji(),

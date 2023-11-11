@@ -1,10 +1,10 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' as foundation;
-import 'emojiPicker.dart';
 
 class CommentTextField extends StatefulWidget {
-  const CommentTextField({super.key});
+  bool noBackground;
+  CommentTextField({super.key, required this.noBackground});
 
   @override
   State<CommentTextField> createState() => _CommentTextFieldState();
@@ -19,9 +19,10 @@ class _CommentTextFieldState extends State<CommentTextField> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          color: Colors.white,
+          color: widget.noBackground ? Colors.transparent : Colors.white,
           child: Padding(
             padding: const EdgeInsets.only(bottom: 25.0, top: 25, left: 20),
             child: Row(children: [
@@ -61,17 +62,17 @@ class _CommentTextFieldState extends State<CommentTextField> {
                         const SizedBox(
                           width: 10,
                         ),
-                         Expanded(
+                        Expanded(
                           child: TextField(
                             controller: _controller,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Add Comment',
                               border: InputBorder.none,
                               hintStyle: TextStyle(
                                 color: Color(0xFF5F6368),
                               ),
                             ),
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF5C8DFF),
                             ),
                           ),
