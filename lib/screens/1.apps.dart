@@ -1,5 +1,6 @@
 import 'package:beidemichael_tiktok/models/video.dart';
 import 'package:beidemichael_tiktok/provider/viewProvider.dart';
+import 'package:beidemichael_tiktok/screens/1.appsWidgets/floatingDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '1.appsWidgets/video.dart';
@@ -61,6 +62,19 @@ class _AppsPageState extends State<AppsPage> {
             children: [
               VideoView(
                 videoModel: videoList[itemIndex],
+              ),
+              Positioned(
+                top: 70,
+                left: 20,
+                child: GestureDetector(
+                  onTap: () {
+                    showFloatingDrawerAlertDialog(context);
+                  },
+                  child: Image.asset(
+                    'assets/Group 4244.png',
+                    width: 50,
+                  ),
+                ),
               ),
               Positioned(
                 bottom: 20,
