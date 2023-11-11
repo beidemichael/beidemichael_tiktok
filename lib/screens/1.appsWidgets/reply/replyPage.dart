@@ -42,6 +42,7 @@ class _ReplyPageState extends State<ReplyPage> {
             ),
             ListView(
               shrinkWrap: true,
+               physics: NeverScrollableScrollPhysics(),
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -76,7 +77,9 @@ class _ReplyPageState extends State<ReplyPage> {
                     ],
                   ),
                 ),
-                 CommentTextField(noBackground: true,),
+                CommentTextField(
+                  noBackground: true,
+                ),
               ],
             ),
           ],

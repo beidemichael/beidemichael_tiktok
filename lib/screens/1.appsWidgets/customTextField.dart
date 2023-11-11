@@ -92,7 +92,7 @@ class _CommentTextFieldState extends State<CommentTextField> {
         Offstage(
           offstage: !emojiShowing,
           child: SizedBox(
-            height: 250,
+            height: widget.noBackground?800: 250,
             child: EmojiPicker(
               textEditingController: _controller,
               // onBackspacePressed: _onBackspacePressed,
