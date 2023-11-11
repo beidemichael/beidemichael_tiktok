@@ -3,6 +3,7 @@ import 'package:beidemichael_tiktok/provider/viewProvider.dart';
 import 'package:beidemichael_tiktok/screens/1.appsWidgets/floatingDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '1.appsWidgets/bottomSheet.dart';
 import '1.appsWidgets/video.dart';
 
 class AppsPage extends StatefulWidget {
@@ -216,10 +217,15 @@ class _AppsPageState extends State<AppsPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      Image.asset(
-                        'assets/Group 613.png',
-                        width: 45,
-                        height: 45,
+                      GestureDetector(
+                        onTap: (){
+                          ShowCommentsBottomSheet(context);
+                        },
+                        child: Image.asset(
+                          'assets/Group 613.png',
+                          width: 45,
+                          height: 45,
+                        ),
                       ),
                       SizedBox(
                         height: 20,
