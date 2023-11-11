@@ -1,9 +1,9 @@
 import 'package:beidemichael_tiktok/models/video.dart';
 import 'package:beidemichael_tiktok/provider/viewProvider.dart';
-import 'package:beidemichael_tiktok/screens/1.appsWidgets/floatingDrawer.dart';
+import 'package:beidemichael_tiktok/screens/1.appsWidgets/floatingDrawer/floatingDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '1.appsWidgets/bottomSheet.dart';
+import '1.appsWidgets/bottomSheet/bottomSheet.dart';
 import '1.appsWidgets/video.dart';
 
 class AppsPage extends StatefulWidget {

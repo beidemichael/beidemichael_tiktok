@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../models/comment.dart';
-import 'commentWidget.dart';
-import 'customTextField.dart';
+import '../../../models/comment.dart';
+import 'comment/commentWidget.dart';
+import 'comment/customTextField.dart';
 
 void ShowCommentsBottomSheet(BuildContext context) {
   showModalBottomSheet(
