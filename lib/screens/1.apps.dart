@@ -1,10 +1,11 @@
 import 'package:beidemichael_tiktok/components/loading.dart';
 import 'package:beidemichael_tiktok/models/video.dart';
+import 'package:beidemichael_tiktok/provider/viewProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:chewie/chewie.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:video_player/video_player.dart';
-
+import 'package:provider/provider.dart';
 import '1.appsWidgets/video.dart';
 
 class AppsPage extends StatefulWidget {
@@ -44,6 +45,7 @@ class _AppsPageState extends State<AppsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final viewProvider = Provider.of<ViewProvider>(context);
     return Container(
       child: PageView.builder(
         itemCount: videoList.length,
@@ -59,8 +61,88 @@ class _AppsPageState extends State<AppsPage> {
           loadNextVideos();
         },
         itemBuilder: (BuildContext context, int itemIndex) {
-          return VideoView(
-            videoModel: videoList[itemIndex],
+          return Stack(
+            children: [
+              VideoView(
+                videoModel: videoList[itemIndex],
+              ),
+              Positioned(
+                bottom: 10,
+                right: viewProvider.fullScreen ? -6 : null,
+                left: viewProvider.fullScreen ? null : -6,
+                child: GestureDetector(
+                  onTap: () {
+                    viewProvider.fullScreenFunction();
+                  },
+                  child: viewProvider.fullScreen
+                      ? Image.asset(
+                          'assets/Group 4238.png',
+                          width: 70,
+                          height: 70,
+                        )
+                      : Transform(
+                          alignment: Alignment.center,
+                          transform: Matrix4.identity()..scale(-1.0, 1.0, 1.0),
+                          child: Image.asset(
+                            'assets/Group 4238.png',
+                            width: 70,
+                            height: 70,
+                          ),
+                        ),
+                ),
+              ),
+              Positioned(
+                bottom: 30,
+                right: 7,
+                child: Visibility(
+                  visible: viewProvider.fullScreen,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/Ellipse 48.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/Group 602.png',
+                        width: 34,
+                        height: 34,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/Group 613.png',
+                        width: 45,
+                        height: 45,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/Group 612.png',
+                        width: 45,
+                        height: 45,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/Vector (11).png',
+                        width: 27,
+                        height: 27,
+                      ),
+                      SizedBox(
+                        height: 60,
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
           );
         },
       ),
