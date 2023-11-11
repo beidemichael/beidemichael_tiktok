@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:video_player/video_player.dart';
@@ -59,12 +61,13 @@ class _VideoViewState extends State<VideoView> {
                     child: FittedBox(
                       fit: BoxFit.cover,
                       child: SizedBox(
-                        width: videoPlayerController.value.size?.width ?? 0,
-                        height: videoPlayerController.value.size?.height ?? 0,
+                        width: videoPlayerController.value.size.width,
+                        height: videoPlayerController.value.size.height,
                         child: VideoPlayer(videoPlayerController),
                       ),
                     ),
                   ),
+                  
                   Positioned(
                     child: Center(
                       child: !playing

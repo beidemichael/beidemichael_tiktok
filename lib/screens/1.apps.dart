@@ -1,10 +1,6 @@
-import 'package:beidemichael_tiktok/components/loading.dart';
 import 'package:beidemichael_tiktok/models/video.dart';
 import 'package:beidemichael_tiktok/provider/viewProvider.dart';
 import 'package:flutter/material.dart';
-import 'package:chewie/chewie.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:video_player/video_player.dart';
 import 'package:provider/provider.dart';
 import '1.appsWidgets/video.dart';
 
@@ -65,6 +61,98 @@ class _AppsPageState extends State<AppsPage> {
             children: [
               VideoView(
                 videoModel: videoList[itemIndex],
+              ),
+              Positioned(
+                bottom: 20,
+                left: 20,
+                child: Visibility(
+                  visible: viewProvider.fullScreen,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.78,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF4C4243).withOpacity(0.5),
+                      border: Border.all(color: Colors.white, width: 0.3),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Visibility(
+                              visible: viewProvider.fullCaption,
+                              child: GestureDetector(
+                                onTap: () {
+                                  viewProvider.fullHeightCaption();
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 20.0,
+                                    top: 10,
+                                  ),
+                                  child: Image.asset(
+                                    'assets/Group 4236 (1).png',
+                                    width: 70,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 10),
+                          child: Text(
+                            videoList[itemIndex].caption,
+                            overflow: viewProvider.fullCaption
+                                ? null
+                                : TextOverflow.ellipsis,
+                            maxLines: viewProvider.fullCaption ? null : 4,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 20.0, left: 20.0, bottom: 10),
+                              child: Text(
+                                videoList[itemIndex].date,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 4,
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 181, 121, 121),
+                                    fontWeight: FontWeight.w800),
+                              ),
+                            ),
+                            Visibility(
+                              visible: !viewProvider.fullCaption,
+                              child: GestureDetector(
+                                onTap: () {
+                                  viewProvider.fullHeightCaption();
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    right: 20.0,
+                                    bottom: 4,
+                                  ),
+                                  child: Image.asset(
+                                    'assets/Group 4236.png',
+                                    width: 70,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
               Positioned(
                 bottom: 10,
